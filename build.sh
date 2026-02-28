@@ -8,7 +8,7 @@ pip install -r EmergencyAgentic/requirements.txt
 # Install and build frontend
 cd app
 npm install
-npm run build
+npm run build -- --emptyOutDir
 cd ..
 
 # Done

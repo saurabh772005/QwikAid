@@ -483,16 +483,18 @@ function Confirmation({ onReset }: { onReset: () => void }) {
   );
 }
 
-// Main Page Component
 export default function EmergencyPage() {
   const { currentStage, resetEmergency, ambulanceLocation, hasReceivedCall, setCallStatus } = useEmergencyStore();
 
   useEmergencySocket();
 
-  // Trigger call exactly when user clicks Update Assessment (Stage 1)
+  // Trigger Voice Agent Call 3 seconds after Update Assessment is clicked (Stage 1+)
   useEffect(() => {
     if (currentStage > 0 && !hasReceivedCall) {
-      setCallStatus('ringing');
+      const timer = setTimeout(() => {
+        setCallStatus('ringing');
+      }, 3000); // 3 seconds delay
+      return () => clearTimeout(timer);
     }
   }, [currentStage, hasReceivedCall, setCallStatus]);
 

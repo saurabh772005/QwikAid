@@ -4,7 +4,7 @@ services:
     name: qwikaid-all-in-one
     env: python
     buildCommand: ./build.sh
-    startCommand: cd EmergencyAgentic && gunicorn --worker-class eventlet -w 1 app:app
+    startCommand: cd EmergencyAgentic && gunicorn --worker-class eventlet -w 1 --bind 0.0.0.0:$PORT app:app
     envVars:
       - key: SECRET_KEY
         generateValue: true
