@@ -2,7 +2,9 @@ import google.generativeai as genai
 import os
 import json
 
-API_KEY = os.environ.get("GOOGLE_API_KEY", "AIzaSyDbw8Lc53-s3DMPgXVx5JWLuwy6rexLMXY")
+API_KEY = os.environ.get("GOOGLE_API_KEY")
+if not API_KEY or API_KEY.strip() == "":
+    API_KEY = "AIzaSyDbw8Lc53-s3DMPgXVx5JWLuwy6rexLMXY"
 genai.configure(api_key=API_KEY)
 model = genai.GenerativeModel('gemini-2.5-flash')
 

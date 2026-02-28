@@ -572,6 +572,8 @@ export default function EmergencyPage() {
           )}
         </div>
       </div>
+      <IncomingCallModal />
+      <DispatchCallModal />
     </div>
   );
 }
