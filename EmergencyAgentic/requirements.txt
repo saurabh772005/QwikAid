@@ -1,0 +1,14 @@
+flask
+flask-socketio
+flask-cors
+eventlet
+python-dotenv
+flask-sqlalchemy
+flask-jwt-extended
+requests
+langchain
+langchain-google-genai
+langchain-core
+google-generativeai
+werkzeug
+gunicorn
