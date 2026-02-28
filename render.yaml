@@ -13,6 +13,6 @@ services:
       - key: DATABASE_URL
         value: sqlite:///qwikaid.db
       - key: FRONTEND_URL
-        value: https://qwikaid-all-in-one.onrender.com # Change this to your final Render URL
+        value: https://qwikaid-1.onrender.com
       - key: VITE_API_URL
-        value: "" # Leave empty for unified deployment, or set to your Render URL
+        value: https://qwikaid-1.onrender.com
